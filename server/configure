@@ -1,0 +1,18 @@
+#!/bin/bash
+cd "$(dirname "$0")"
+echo 'Hi, Alecksandr!'
+echo ' '
+echo 'Now, I install librarys and tools for run my server for you'
+echo 'Now install depends...'
+./bin/npm install node http sqlite3 --save
+
+echo 'Make run file...'
+echo '#!/bin/bash' >> run
+echo 'cd "$(dirname "$0")"' >> run
+echo './node_modules/node/bin/node main.js' >> run
+chmod +x ./run
+
+echo 'cleaning...'
+rm -r ./bin ./lib
+
+echo 'Thanks you'
